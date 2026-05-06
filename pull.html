@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym – PULL (Back & Biceps)</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+  <body>
+    <h1>💙 DAY 2 – PULL (Back & Biceps)</h1>
+
+    <a href="select-workout.html"><button>Back</button></a>
+
+    <div class="workout-section">
+      <!-- Warm-Up -->
+      <div class="warmup">
+        <strong>🔥 Warm-Up:</strong><br />
+        5 min easy rower or treadmill walk<br />
+        Arm circles & band pull-aparts ×15<br />
+        Scapular pull-ups ×8–10 (just hanging and shrugging)<br />
+        Light band rows ×15
+      </div>
+
+      <!-- =============== BACK CARD =============== -->
+      <section class="muscle-card" data-muscle="back">
+        <div class="muscle-card-header">
+          <h2>Back</h2>
+          <p>
+            Vertical and horizontal pulls to hit lats, mid-back, and rear delts.
+          </p>
+        </div>
+
+        <!-- Vertical Pull – Lats -->
+        <div class="subsection" data-subsection="vertical-pull-lats">
+          <div class="subsection-header">
+            <h3>Vertical Pull – Lats</h3>
+            <p>Pulling from overhead to hit lats and upper back.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="lat-pulldown">
+              <a href="#">Lat Pulldown – 3×10</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="single-arm-lat-pulldown">
+              <a href="#">Single-Arm Lat Pulldown – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="assisted-pullup">
+              <a href="#">Assisted Pull-Up – 3×6–8</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="pullup">
+              <a href="#">Pull-Up (Bodyweight/Assisted) – 3×AMRAP</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Pull – Mid-Back -->
+        <div class="subsection" data-subsection="horizontal-pull">
+          <div class="subsection-header">
+            <h3>Horizontal Pull – Mid Back</h3>
+            <p>Rows to hit mid-back, rhomboids, and lower traps.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="seated-cable-row">
+              <a href="#">Seated Cable Row – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="chest-supported-db-row">
+              <a href="#">Chest-Supported DB Row – 3×10</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="machine-row">
+              <a href="#">Machine Row – 3×8–10</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Lat Isolation – Straight-Arm Pulldown / Pullover -->
+        <div class="subsection" data-subsection="lat-isolation">
+          <div class="subsection-header">
+            <h3>Lat Isolation – Pullover</h3>
+            <p>Long-arc movements to stretch and shorten the lats.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="cable-pullover">
+              <a href="#">Cable Pullover – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="straight-arm-pulldown">
+              <a href="#">Straight-Arm Pulldown – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Rear Delts -->
+        <div class="subsection" data-subsection="rear-delts">
+          <div class="subsection-header">
+            <h3>Rear Delts – Upper Back Support</h3>
+            <p>Face pulls and reverse flies to balance shoulder health.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="face-pull">
+              <a href="#">Face Pull – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="reverse-pec-deck">
+              <a href="#">Reverse Pec Deck – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="bentover-reverse-fly">
+              <a href="#">Bent-Over Reverse Fly – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== BICEPS CARD =============== -->
+      <section class="muscle-card" data-muscle="biceps">
+        <div class="muscle-card-header">
+          <h2>Biceps</h2>
+          <p>Short head, long head, and brachialis for full arm shape.</p>
+        </div>
+
+        <!-- Short Head -->
+        <div class="subsection" data-subsection="biceps-short-head">
+          <div class="subsection-header">
+            <h3>Short Head – Inner Biceps</h3>
+            <p>
+              Favours wider/inner bicep with more supination and preacher work.
+            </p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="preacher-curl">
+              <a href="#">Preacher Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="cable-ezbar-curl">
+              <a href="#">Cable EZ-Bar Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="machine-preacher-curl">
+              <a href="#">Machine Preacher Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Long Head -->
+        <div class="subsection" data-subsection="biceps-long-head">
+          <div class="subsection-header">
+            <h3>Long Head – Outer Peak</h3>
+            <p>Stretched positions and narrower grips for the “peak”.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div
+              class="exercise is-main"
+              data-exercise-id="incline-dumbbell-curl"
+            >
+              <a href="#">Seated Incline DB Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="waiter-curl">
+              <a href="#">Waiter Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="alternating-dumbbell-curl">
+              <a href="#">Alt DB Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Brachialis / Hammer -->
+        <div class="subsection" data-subsection="brachialis">
+          <div class="subsection-header">
+            <h3>Brachialis & Brachioradialis</h3>
+            <p>
+              Neutral or reverse grips to thicken the arm between biceps and
+              triceps.
+            </p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="hammer-curl">
+              <a href="#">Hammer Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="reverse-grip-cable-curl">
+              <a href="#">Reverse-Grip Cable Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOM EXERCISES -->
+      <div id="gym-pull-custom-exercises"></div>
+      <button
+        id="openAddExercise"
+        class="add-exercise-button"
+        data-section="gym-pull"
+      >
+        Add Custom Exercise
+      </button>
+
+      <!-- Cool Down -->
+      <div class="cooldown">
+        <strong>🧘 Cool Down:</strong><br />
+        Lat stretch hanging from bar<br />
+        Cross-body shoulder stretch<br />
+        Cat-cow on floor ×8<br />
+        Light band rows ×15
+      </div>
+    </div>
+
+    <!-- Exercise Modal -->
+    <div id="exerciseModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalExerciseName">Exercise Name</h3>
+        <div class="form-group">
+          <label for="weight">Weight (lbs/kg):</label>
+          <input type="number" id="weight" placeholder="Enter weight" />
+        </div>
+        <div class="form-group">
+          <label for="sets">Sets:</label>
+          <input type="number" id="sets" placeholder="Enter sets" />
+        </div>
+        <div class="form-group">
+          <label for="reps">Reps:</label>
+          <input type="number" id="reps" placeholder="Enter reps" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <input type="text" id="notes" placeholder="Optional notes" />
+        </div>
+        <h4>Previous Records:</h4>
+        <div id="exerciseHistory" class="history-list"></div>
+        <div class="modal-buttons">
+          <button id="cancelExercise" class="action-button">Cancel</button>
+          <button id="saveExercise" class="toggle-button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Custom Exercise Modal -->
+    <div id="addExerciseModal" class="modal">
+      <div class="modal-content">
+        <h3>Add Custom Exercise</h3>
+        <div class="form-group">
+          <label for="customExerciseName">Exercise Name:</label>
+          <input
+            type="text"
+            id="customExerciseName"
+            placeholder="e.g., Single-Arm Row"
+          />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseSets">Default Sets:</label>
+          <input type="number" id="customExerciseSets" placeholder="3" />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseReps">Default Reps:</label>
+          <input type="number" id="customExerciseReps" placeholder="10-12" />
+        </div>
+        <div class="modal-buttons">
+          <button id="cancelCustomExercise" class="action-button">
+            Cancel
+          </button>
+          <button id="saveCustomExercise" class="toggle-button">
+            Add Exercise
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your shared JS files (no inline logic here) -->
+    <script src="js/app.js"></script>
+    <script src="js/workout-layout.js"></script>
+  </body>
+</html>

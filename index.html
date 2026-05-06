@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <img src="icons/icon-512.png" alt="Gym Logo" class="loading-logo" />
+
+      <h1 class="glitch" data-text="GYM TRACKER">GYM TRACKER</h1>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+    <div class="fullscreen-center">
+      <h1>Workout Tracker</h1>
+
+      <!-- Workout Cards -->
+      <div class="card-container">
+        <a href="select-workout.html" class="card">
+          <h2>🏋️ Gym Workouts</h2>
+          <p>Push • Pull • Legs • Core</p>
+        </a>
+
+        <a href="select-workout-home.html" class="card">
+          <h2>🏠 At Home Workouts</h2>
+          <p>Dumbbells • Bands • Bodyweight</p>
+        </a>
+      </div>
+
+      <!-- Import / Export Buttons -->
+      <div class="button-container">
+        <button class="import-export" onclick="exportData()">
+          Export All Workouts
+        </button>
+        <button
+          class="import-export"
+          onclick="document.getElementById('importFile').click()"
+        >
+          Import Workouts
+        </button>
+        <input
+          type="file"
+          id="importFile"
+          onchange="importData(event)"
+          style="display: none"
+        />
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const loader = document.getElementById("loading-screen");
+          loader.style.display = "none";
+        }, 3200);
+      });
+    </script>
+  </body>
+</html>

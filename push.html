@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym – PUSH (Combined)</title>
+
+    <!-- Your existing styles & manifest -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+  <body>
+    <h1>🧡 DAY 1 – PUSH (Chest → Shoulders → Triceps)</h1>
+    <!-- Change this link if your back nav changes -->
+    <a href="select-week-a.html"><button>Back</button></a>
+
+    <div class="workout-section">
+      <!-- Warm-Up (same as your current pages) -->
+      <div class="warmup">
+        <strong>🔥 Warm-Up:</strong><br />
+        5 min on bike or StairMaster<br />
+        Arm circles (30 sec each direction)<br />
+        Shoulder band pull-aparts ×15<br />
+        Chest openers and light push-ups ×10
+      </div>
+
+      <!-- ================== CHEST CARD ================== -->
+      <section class="muscle-card" data-muscle="chest">
+        <div class="muscle-card-header">
+          <h2>Chest</h2>
+          <p>
+            Press variations to hit mid/upper chest from both Week A & Week B.
+          </p>
+        </div>
+
+        <!-- Chest Press / Horizontal Push -->
+        <div class="subsection" data-subsection="chest-press">
+          <div class="subsection-header">
+            <h3>Horizontal Push – Chest Press</h3>
+            <p>Main barbell/machine presses from both weeks.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <!-- Week A main press -->
+            <div
+              class="exercise is-main"
+              data-exercise-id="barbell-bench-press"
+            >
+              <a href="#">Barbell Bench Press – 4×5</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives (Week A + Week B)</h4>
+
+            <!-- Week B incline barbell -->
+            <div class="exercise" data-exercise-id="incline-barbell-bench">
+              <a href="#">Incline Barbell Bench – 4×5</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <!-- Week A incline chest press -->
+            <div class="exercise" data-exercise-id="incline-chest-press">
+              <a href="#">Incline Chest Press – 3×8–10</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <!-- Week B chest press machine -->
+            <div class="exercise" data-exercise-id="chest-press-machine">
+              <a href="#">Chest Press Machine – 3×10</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================== SHOULDERS CARD ================== -->
+      <section class="muscle-card" data-muscle="shoulders">
+        <div class="muscle-card-header">
+          <h2>Shoulders</h2>
+          <p>Overhead pressing plus side delts from both weeks.</p>
+        </div>
+
+        <!-- Vertical Push -->
+        <div class="subsection" data-subsection="vertical-push">
+          <div class="subsection-header">
+            <h3>Vertical Push – Overhead Press</h3>
+            <p>Main shoulder presses supporting your pushes.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <!-- Week A DB press -->
+            <div
+              class="exercise is-main"
+              data-exercise-id="dumbbell-shoulder-press"
+            >
+              <a href="#">Dumbbell Shoulder Press – 4×6–8</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives (Week A + Week B)</h4>
+
+            <!-- Week B barbell press -->
+            <div class="exercise" data-exercise-id="barbell-shoulder-press">
+              <a href="#">Barbell Shoulder Press – 4×6</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Delts -->
+        <div class="subsection" data-subsection="side-delts">
+          <div class="subsection-header">
+            <h3>Shoulder Abduction – Side Delts</h3>
+            <p>Lateral raises to build shoulder width.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <!-- Week A lateral raises -->
+            <div class="exercise is-main" data-exercise-id="lateral-raises">
+              <a href="#">Lateral Raises – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <!-- Week B lateral raises version -->
+            <div class="exercise" data-exercise-id="lateral-raises-week-b">
+              <a href="#">Lateral Raises – 4×12</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================== TRICEPS CARD ================== -->
+      <section class="muscle-card" data-muscle="triceps">
+        <div class="muscle-card-header">
+          <h2>Triceps</h2>
+          <p>Cable work + overhead + dips from both weeks.</p>
+        </div>
+
+        <!-- Cable Pressdowns / Lateral Head -->
+        <div class="subsection" data-subsection="triceps-cable">
+          <div class="subsection-header">
+            <h3>Cable Pressdowns</h3>
+            <p>Focus on outer head; supports all pressing lockout.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <!-- Week A cable pushdowns -->
+            <div
+              class="exercise is-main"
+              data-exercise-id="cable-tricep-pushdown"
+            >
+              <a href="#">Cable Tricep Pushdowns – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <!-- Week B cable triceps -->
+            <div class="exercise" data-exercise-id="cable-triceps">
+              <a href="#">Cable Triceps – 3×12</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Overhead / Long Head -->
+        <div class="subsection" data-subsection="triceps-overhead">
+          <div class="subsection-header">
+            <h3>Overhead / Long Head + Compound</h3>
+            <p>Stretched long head and dips for extra tricep + chest.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <!-- Week A overhead extensions -->
+            <div
+              class="exercise is-main"
+              data-exercise-id="overhead-tricep-extension"
+            >
+              <a href="#">Overhead Tricep Extension – 3×10</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <!-- Week B dips -->
+            <div class="exercise" data-exercise-id="dips">
+              <a href="#">Dips – 3×8–10</a>
+              <span class="exercise-stats"></span>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================== CUSTOM EXERCISES ================== -->
+      <div id="gym-push-custom-exercises"></div>
+      <!-- Give this button the id app.js expects so it opens the custom modal -->
+      <button
+        id="openAddExercise"
+        class="add-exercise-button"
+        data-section="gym-push"
+      >
+        Add Custom Exercise
+      </button>
+
+      <!-- ================== COOLDOWN ================== -->
+      <div class="cooldown">
+        <strong>🧘 Cool Down:</strong><br />
+        Shoulder cross-body stretch<br />
+        Wall chest stretch<br />
+        Overhead triceps stretch<br />
+        Light band pulls ×15
+      </div>
+    </div>
+
+    <!-- Exercise Modal (exactly as in your current pages) -->
+    <div id="exerciseModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalExerciseName">Exercise Name</h3>
+        <div class="form-group">
+          <label for="weight">Weight (lbs/kg):</label>
+          <input type="number" id="weight" placeholder="Enter weight" />
+        </div>
+        <div class="form-group">
+          <label for="sets">Sets:</label>
+          <input type="number" id="sets" placeholder="Enter sets" />
+        </div>
+        <div class="form-group">
+          <label for="reps">Reps:</label>
+          <input type="number" id="reps" placeholder="Enter reps" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <input type="text" id="notes" placeholder="Optional notes" />
+        </div>
+        <h4>Previous Records:</h4>
+        <div id="exerciseHistory" class="history-list"></div>
+        <div class="modal-buttons">
+          <button id="cancelExercise" class="action-button">Cancel</button>
+          <button id="saveExercise" class="toggle-button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Custom Exercise Modal (from your existing pages) -->
+    <div id="addExerciseModal" class="modal">
+      <div class="modal-content">
+        <h3>Add Custom Exercise</h3>
+        <div class="form-group">
+          <label for="customExerciseName">Exercise Name:</label>
+          <input
+            type="text"
+            id="customExerciseName"
+            placeholder="e.g., Incline DB Press"
+          />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseSets">Default Sets:</label>
+          <input type="number" id="customExerciseSets" placeholder="3" />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseReps">Default Reps:</label>
+          <input type="number" id="customExerciseReps" placeholder="10-12" />
+        </div>
+        <div class="modal-buttons">
+          <button id="cancelCustomExercise" class="action-button">
+            Cancel
+          </button>
+          <button id="saveCustomExercise" class="toggle-button">
+            Add Exercise
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your existing JS (modal, history, custom exercises, import/export) -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

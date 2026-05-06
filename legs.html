@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym – LEGS (Glutes & Legs)</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+  <body>
+    <h1>💚 DAY 3/4 – LEGS (Glutes, Quads, Hamstrings, Core)</h1>
+
+    <a href="select-workout.html"><button>Back</button></a>
+
+    <div class="workout-section">
+      <!-- Warm-Up -->
+      <div class="warmup">
+        <strong>🔥 Warm-Up:</strong><br />
+        5–7 min brisk walk or bike<br />
+        Leg swings (front/back & side-to-side) ×10 each<br />
+        Bodyweight squats ×10<br />
+        Glute bridges ×10
+      </div>
+
+      <!-- =============== GLUTES & HINGE CARD =============== -->
+      <section class="muscle-card" data-muscle="glutes-hinge">
+        <div class="muscle-card-header">
+          <h2>Glutes & Hinge</h2>
+          <p>
+            Hip extension and hinge patterns to grow glutes and posterior chain.
+          </p>
+        </div>
+
+        <!-- Hip Thrust / Glute Bridge -->
+        <div class="subsection" data-subsection="hip-extension">
+          <div class="subsection-header">
+            <h3>Hip Extension – Glute Max</h3>
+            <p>Hip thrust variations for primary glute growth.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="barbell-hip-thrust">
+              <a href="#">Barbell Hip Thrust – 4×8–10</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="glute-bridge">
+              <a href="#">Glute Bridge (BB/Bodyweight) – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="hip-thrust-machine">
+              <a href="#">Hip Thrust Machine – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Deadlift / RDL -->
+        <div class="subsection" data-subsection="hinge-rdl">
+          <div class="subsection-header">
+            <h3>Hip Hinge – Hamstrings & Glutes</h3>
+            <p>Deadlift variations hinging at the hip for back of legs.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="romanian-deadlift">
+              <a href="#">Romanian Deadlift (RDL) – 3×8–10</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="conventional-deadlift">
+              <a href="#">Conventional Deadlift – 3×5</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="sumo-deadlift">
+              <a href="#">Sumo Deadlift – 3×5–6</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Unilateral Glutes (Split Squats) -->
+        <div class="subsection" data-subsection="unilateral-glutes">
+          <div class="subsection-header">
+            <h3>Unilateral – Split Squats & Lunges</h3>
+            <p>Single-leg work for glute, quad, and balance.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div
+              class="exercise is-main"
+              data-exercise-id="bulgarian-split-squat"
+            >
+              <a href="#">Bulgarian Split Squat – 3×8–10/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="walking-lunge">
+              <a href="#">Walking Lunge – 3×10–12 steps/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="step-up">
+              <a href="#">DB Step-Up – 3×10/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Glute Med / Abduction -->
+        <div class="subsection" data-subsection="glute-med-abduction">
+          <div class="subsection-header">
+            <h3>Glute Med / Abduction</h3>
+            <p>Side glute stability and shape.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="hip-abductor">
+              <a href="#">Hip Abductor Machine – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="cable-kickback">
+              <a href="#">Cable Kickback – 3×12–15/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="banded-side-steps">
+              <a href="#">Banded Side Steps – 3×15–20/side</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== QUADS & PRESS CARD =============== -->
+      <section class="muscle-card" data-muscle="quads-press">
+        <div class="muscle-card-header">
+          <h2>Quads & Press</h2>
+          <p>Squats, leg press, and extensions for front of thighs.</p>
+        </div>
+
+        <!-- Squat Pattern -->
+        <div class="subsection" data-subsection="squat-pattern">
+          <div class="subsection-header">
+            <h3>Squat Pattern – Quads & Glutes</h3>
+            <p>Main squat movement; choose the one you can load well.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="barbell-back-squat">
+              <a href="#">Barbell Back Squat – 4×6–8</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="front-squat">
+              <a href="#">Front Squat – 4×5–6</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="goblet-squat">
+              <a href="#">Goblet Squat – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Leg Press -->
+        <div class="subsection" data-subsection="leg-press">
+          <div class="subsection-header">
+            <h3>Leg Press – Quad Emphasis</h3>
+            <p>Heavy pressing with support; good when squat is fatiguing.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="leg-press">
+              <a href="#">Leg Press – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="single-leg-press">
+              <a href="#">Single-Leg Press – 3×10–12/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Leg Extension -->
+        <div class="subsection" data-subsection="leg-extension">
+          <div class="subsection-header">
+            <h3>Leg Extension – Quad Isolation</h3>
+            <p>Locks in knee extension to burn out quads at the end.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="leg-extension">
+              <a href="#">Leg Extension – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="single-leg-extension">
+              <a href="#">Single-Leg Extension – 3×12–15/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== HAMSTRINGS & ADDUCTORS CARD =============== -->
+      <section class="muscle-card" data-muscle="hamstrings-adductors">
+        <div class="muscle-card-header">
+          <h2>Hamstrings & Adductors</h2>
+          <p>Posterior thigh and inner thigh support work.</p>
+        </div>
+
+        <!-- Leg Curl -->
+        <div class="subsection" data-subsection="leg-curl">
+          <div class="subsection-header">
+            <h3>Leg Curl – Hamstrings</h3>
+            <p>Knee flexion to hit hamstrings directly.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="seated-leg-curl">
+              <a href="#">Seated Leg Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="lying-leg-curl">
+              <a href="#">Lying Leg Curl – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="single-leg-curl">
+              <a href="#">Single-Leg Curl – 3×10–12/leg</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Adductors -->
+        <div class="subsection" data-subsection="hip-adductor">
+          <div class="subsection-header">
+            <h3>Hip Adductors – Inner Thigh</h3>
+            <p>Adductor machine and similar to support hip stability.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="hip-adductor">
+              <a href="#">Hip Adductor Machine – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="copenhagen-plank">
+              <a href="#">Copenhagen Plank (bodyweight) – 2–3×20–30s/side</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== CALVES & CORE CARD =============== -->
+      <section class="muscle-card" data-muscle="calves-core">
+        <div class="muscle-card-header">
+          <h2>Calves & Core</h2>
+          <p>Lower leg and core work to finish the session.</p>
+        </div>
+
+        <!-- Calves -->
+        <div class="subsection" data-subsection="calves">
+          <div class="subsection-header">
+            <h3>Calf Raises</h3>
+            <p>Standing or seated calf work for lower leg.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div
+              class="exercise is-main"
+              data-exercise-id="standing-calf-raise"
+            >
+              <a href="#">Standing Calf Raise – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="seated-calf-raise">
+              <a href="#">Seated Calf Raise – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Core -->
+        <div class="subsection" data-subsection="core">
+          <div class="subsection-header">
+            <h3>Core – Abs & Bracing</h3>
+            <p>Ab flexion and anti-extension to keep your trunk strong.</p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="cable-crunch">
+              <a href="#">Cable Crunch – 3×12–15</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+
+            <div class="exercise" data-exercise-id="hanging-leg-raise">
+              <a href="#">Hanging Leg Raise – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+
+            <div class="exercise" data-exercise-id="plank">
+              <a href="#">Plank – 3×30–45s</a>
+              <span class="exercise-stats"></span>
+              <button class="history-btn" type="button">History</button>
+              <button class="swap-btn" type="button">Make Main</button>
+              <button class="add-btn" type="button">Add to Today</button>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CUSTOM EXERCISES -->
+      <div id="gym-legs-custom-exercises"></div>
+      <button
+        id="openAddExercise"
+        class="add-exercise-button"
+        data-section="gym-legs"
+      >
+        Add Custom Exercise
+      </button>
+
+      <!-- Cool Down -->
+      <div class="cooldown">
+        <strong>🧘 Cool Down:</strong><br />
+        Quad stretch (standing, holding foot)<br />
+        Hamstring stretch (toe touch or on step)<br />
+        Glute figure-4 stretch<br />
+        Calf stretch against wall
+      </div>
+    </div>
+
+    <!-- Exercise Modal -->
+    <div id="exerciseModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalExerciseName">Exercise Name</h3>
+        <div class="form-group">
+          <label for="weight">Weight (lbs/kg):</label>
+          <input type="number" id="weight" placeholder="Enter weight" />
+        </div>
+        <div class="form-group">
+          <label for="sets">Sets:</label>
+          <input type="number" id="sets" placeholder="Enter sets" />
+        </div>
+        <div class="form-group">
+          <label for="reps">Reps:</label>
+          <input type="number" id="reps" placeholder="Enter reps" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <input type="text" id="notes" placeholder="Optional notes" />
+        </div>
+        <h4>Previous Records:</h4>
+        <div id="exerciseHistory" class="history-list"></div>
+        <div class="modal-buttons">
+          <button id="cancelExercise" class="action-button">Cancel</button>
+          <button id="saveExercise" class="toggle-button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Custom Exercise Modal -->
+    <div id="addExerciseModal" class="modal">
+      <div class="modal-content">
+        <h3>Add Custom Exercise</h3>
+        <div class="form-group">
+          <label for="customExerciseName">Exercise Name:</label>
+          <input
+            type="text"
+            id="customExerciseName"
+            placeholder="e.g., Heel-Elevated Squat"
+          />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseSets">Default Sets:</label>
+          <input type="number" id="customExerciseSets" placeholder="3" />
+        </div>
+        <div class="form-group">
+          <label for="customExerciseReps">Default Reps:</label>
+          <input type="number" id="customExerciseReps" placeholder="10-12" />
+        </div>
+        <div class="modal-buttons">
+          <button id="cancelCustomExercise" class="action-button">
+            Cancel
+          </button>
+          <button id="saveCustomExercise" class="toggle-button">
+            Add Exercise
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shared JS (no inline logic here so you can manage at scale) -->
+    <script src="js/app.js"></script>
+    <script src="js/workout-layout.js"></script>
+  </body>
+</html>
