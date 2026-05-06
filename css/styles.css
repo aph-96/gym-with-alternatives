@@ -34,9 +34,7 @@ h1 {
   justify-content: center;
 }
 
-/* ===============================
-   GAMER LOADING SCREEN
-================================ */
+/* ===== GAMER LOADING SCREEN ===== */
 #loading-screen {
   position: fixed;
   inset: 0;
@@ -50,14 +48,12 @@ h1 {
   animation: fadeOut 0.8s ease 3s forwards;
 }
 
-/* Logo glow */
 .loading-logo {
   width: 130px;
   margin-bottom: 25px;
   animation: pulseGlow 1.5s infinite alternate;
 }
 
-/* Neon pulse */
 @keyframes pulseGlow {
   from {
     filter: drop-shadow(0 0 10px #a855f7);
@@ -69,7 +65,6 @@ h1 {
   }
 }
 
-/* Glitch text */
 .glitch {
   position: relative;
   color: #a855f7;
@@ -128,7 +123,6 @@ h1 {
   }
 }
 
-/* Loading bar */
 .loading-bar {
   width: 200px;
   height: 6px;
@@ -151,7 +145,6 @@ h1 {
   }
 }
 
-/* Fade out */
 @keyframes fadeOut {
   to {
     opacity: 0;
@@ -159,10 +152,10 @@ h1 {
   }
 }
 
-/* ===== CARD LAYOUT (HOME / SELECTION) ===== */
+/* ===== CARD LAYOUT ===== */
 .card-container {
   display: grid;
-  grid-template-columns: 1fr; /* mobile default: single column */
+  grid-template-columns: 1fr;
   gap: 20px;
   max-width: 700px;
   margin: 20px auto;
@@ -196,7 +189,7 @@ h1 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* ===== WORKOUT PAGE LAYOUT ===== */
+/* ===== WORKOUT PAGE ===== */
 .workout-section {
   max-width: 700px;
   margin: 0 auto;
@@ -259,7 +252,7 @@ h1 {
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
 }
 
-/* Centered warm-up and cool-down text */
+/* ===== WARMUP / COOLDOWN ===== */
 .warmup,
 .cooldown {
   margin: 0.75rem 0;
@@ -279,47 +272,6 @@ h1 {
 .warmup strong,
 .cooldown strong {
   color: var(--accent);
-}
-
-/* Center "Show alternatives" button */
-.alt-toggle {
-  display: inline-block;
-  margin: 0.5rem auto 0;
-  text-align: center;
-}
-
-/* Alternatives list */
-.alt-list {
-  margin-top: 0.4rem;
-  border-top: 1px solid #262630;
-  padding-top: 0.35rem;
-}
-
-.alt-list h4 {
-  margin: 0 0 0.25rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #9ca3af;
-}
-
-.alt-list.is-collapsed {
-  display: none;
-}
-
-.swap-btn,
-.add-btn,
-.remove-today-btn {
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
-}
-
-.remove-today-btn {
-  background-color: #7f1d1d;
-}
-
-.remove-today-btn:hover {
-  background-color: #991b1b;
 }
 
 /* ===== BUTTONS ===== */
@@ -352,10 +304,9 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
-/* Import/Export buttons */
 button.import-export {
   background-color: var(--accent);
   border: none;
@@ -371,7 +322,7 @@ button.import-export:hover {
   background-color: #9333ea;
 }
 
-/* ===== WORKOUT EXERCISES (shared .exercise style) ===== */
+/* ===== EXERCISE ROWS ===== */
 #exerciseContainer {
   max-width: 600px;
   margin: 0 auto;
@@ -379,10 +330,10 @@ button.import-export:hover {
 }
 
 .exercise {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.6rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.45rem 0.75rem;
+  padding: 0.65rem 0.85rem;
   border-radius: var(--radius);
   background-color: var(--card);
   margin-bottom: 0.8rem;
@@ -390,9 +341,9 @@ button.import-export:hover {
 }
 
 .exercise a {
+  grid-column: 1 / 2;
   color: var(--text);
   text-decoration: none;
-  flex-grow: 1;
 }
 
 .exercise a:hover {
@@ -400,15 +351,163 @@ button.import-export:hover {
 }
 
 .exercise-stats {
+  grid-column: 1 / 3;
   color: var(--muted);
   font-size: 0.85rem;
-  margin-right: 10px;
+}
+
+.exercise input[type="checkbox"] {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
 }
 
 input[type="checkbox"] {
   accent-color: var(--accent);
   width: 18px;
   height: 18px;
+}
+
+/* Action row under exercise */
+.exercise .history-btn,
+.exercise .swap-btn,
+.exercise .add-btn,
+.exercise .remove-today-btn {
+  grid-row: 3;
+  width: auto;
+  justify-self: start;
+}
+
+/* History button */
+.exercise .history-btn {
+  grid-column: 1;
+  padding: 8px;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+/* MAIN exercise: title + history + checkbox all inline */
+.today-exercise .exercise {
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.today-exercise .exercise a {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.today-exercise .exercise .history-btn {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  margin-right: 0.5rem;
+  align-self: center;
+}
+
+.today-exercise .exercise input[type="checkbox"] {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.today-exercise .exercise .exercise-stats {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+
+/* ===== ALTERNATIVES ===== */
+.alt-toggle {
+  display: inline-block;
+  margin: 0.5rem auto 0.85rem;
+  text-align: center;
+}
+
+.alt-list {
+  margin-top: 0.85rem;
+  border-top: 1px solid #262630;
+  padding-top: 0.85rem;
+}
+
+.alt-list h4 {
+  margin: 0 0 0.45rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.alt-list.is-collapsed {
+  display: none;
+}
+
+/* Alternative exercise action row:
+   History | Make Main | Add to Today */
+.alt-list .exercise {
+  grid-template-columns: 1fr auto;
+}
+
+.alt-list .history-btn,
+.alt-list .swap-btn,
+.alt-list .add-btn {
+  grid-row: 3;
+  width: 50px;
+  justify-self: start;
+  white-space: nowrap;
+}
+
+/* Put the three controls side by side */
+.alt-list .history-btn {
+  grid-column: 1;
+}
+
+.alt-list .swap-btn {
+  grid-column: 1;
+  margin-left: 6.5rem;
+}
+
+.alt-list .add-btn {
+  grid-column: 1;
+  margin-left: 12.5rem;
+}
+
+/* Make Main / Add to Today as purple text links */
+.alt-list .swap-btn,
+.alt-list .add-btn {
+  background: transparent;
+  color: var(--accent);
+  padding: 0.25rem 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.alt-list .swap-btn:hover,
+.alt-list .add-btn:hover {
+  background: transparent;
+  color: #c084fc;
+  transform: none;
+}
+/* Hide checkboxes inside alternatives */
+.alt-list .exercise input[type="checkbox"] {
+  display: none;
+}
+/* Remove from today */
+.remove-today-btn {
+  background-color: #7f1d1d;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+}
+
+.remove-today-btn:hover {
+  background-color: #991b1b;
 }
 
 /* ===== MODALS ===== */
@@ -486,52 +585,50 @@ input[type="checkbox"] {
 }
 
 /* ===== RESPONSIVE ===== */
-
-/* Mobile-specific tweaks */
 @media (max-width: 640px) {
-  /* Slight padding on mobile */
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
   .workout-section {
-    padding: 0 0.5rem;
+    padding: 0 0.25rem;
   }
 
-  /* Exercises go single-column for easier tapping */
+  .muscle-card {
+    padding: 0.9rem;
+  }
+
   .exercise {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-    row-gap: 0.25rem;
+    grid-template-columns: minmax(0, 1fr) 86px 26px;
+    padding: 0.6rem 0.65rem;
+    column-gap: 0.45rem;
   }
 
-  .exercise a {
-    justify-self: flex-start;
-  }
-
-  .exercise-stats {
-    justify-self: flex-start;
-    margin-right: 0; /* no need for side margin in single column */
-  }
-
-  .exercise input[type="checkbox"] {
-    justify-self: flex-start;
-  }
-
-  /* Action buttons full-width & stacked */
   .exercise .history-btn,
-  .exercise .swap-btn,
-  .exercise .add-btn,
-  .exercise .remove-today-btn {
-    width: 100%;
-    text-align: center;
-    justify-self: stretch;
-    margin-top: 0.15rem;
+  .alt-list .swap-btn,
+  .alt-list .add-btn {
+    width: 86px;
+    font-size: 0.74rem;
   }
 
   .alt-toggle {
     font-size: 0.85rem;
   }
+
+  .modal-buttons {
+    gap: 0.75rem;
+  }
+
+  .modal-buttons button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+  }
 }
 
-/* Mobile-first: 1 column by default, constrain body width on larger screens */
 @media (min-width: 600px) {
   body {
     max-width: 600px;
@@ -541,6 +638,6 @@ input[type="checkbox"] {
 
 @media (min-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on larger screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
