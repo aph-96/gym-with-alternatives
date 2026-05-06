@@ -59,7 +59,16 @@ if (exerciseModal) {
     displayHistory(id);
     exerciseModal.style.display = "flex";
   }
+  // Close modal when clicking outside modal content
+  window.addEventListener("click", (e) => {
+    if (e.target === exerciseModal) {
+      exerciseModal.style.display = "none";
+    }
 
+    if (e.target === addExerciseModal) {
+      addExerciseModal.style.display = "none";
+    }
+  });
   // --------------------
   // DISPLAY HISTORY
   // --------------------
