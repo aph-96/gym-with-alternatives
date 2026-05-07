@@ -618,20 +618,22 @@ input[type="checkbox"] {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 640px) {
-  .alt-list .exercise-actions {
-    width: auto;
-    max-width: max-content;
-    margin: 0 auto;
+/* FINAL override: keep alternative buttons side by side */
+.alt-list .exercise-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: 100% !important;
+}
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .alt-list .exercise-actions button {
-    width: auto;
-    flex: 0 0 auto;
-  }
+.alt-list .exercise-actions .swap-btn,
+.alt-list .exercise-actions .add-btn {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0.25rem 0 !important;
 }
