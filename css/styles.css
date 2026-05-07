@@ -618,3 +618,20 @@ input[type="checkbox"] {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media (max-width: 640px) {
+  .alt-list .exercise-actions {
+    width: auto;
+    max-width: max-content;
+    margin: 0 auto;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .alt-list .exercise-actions button {
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
