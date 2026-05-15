@@ -25,6 +25,7 @@ body {
 h1 {
   color: var(--accent);
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .fullscreen-center {
