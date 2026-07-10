@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym – Personal Training</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+
+  <body>
+    <a href="select-workout.html"><button>Back</button></a>
+    <h1>💪🏼 Personal Training</h1>
+    <h3>Shoulder / Rotator Tendon Work</h3>
+
+    <div class="workout-section">
+      <div class="warmup">
+        <strong>🔥 Warm-Up:</strong><br />
+        Shoulder circles
+      </div>
+
+      <section class="muscle-card" data-muscle="glutes-hamstrings">
+        <div class="muscle-card-header">
+          <h2>Supraspinatus Tendons</h2>
+          <p>
+            Helps initiate and control the movement of raising your arm away
+            from the body, while also pulling the arm bone firmly into the
+            socket.
+          </p>
+        </div>
+
+        <div class="subsection" data-subsection="hip-thrust">
+          <div class="subsection-header">
+            <h3>Single Arm Lat Pulldown</h3>
+            <p>
+              Don't raise above 90 degrees and sit 45 degrees to it <br />
+              Explosive on the way down and slow on the way up.
+            </p>
+          </div>
+
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div
+              class="exercise is-main"
+              data-exercise-id="single-arm-lat-pulldown"
+            >
+              <a href="#">Single Arm Lat Pulldown – 3 sets 6 reps</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="seated-cable-row">
+              <a href="#">Seated Cable Row – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+
+        <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="seated-cable-row">
+              <a href="#">Seated Cable Row – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+        <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="seated-cable-row">
+              <a href="#">Seated Cable Row – 3×10–12</a>
+              <span class="exercise-stats"></span>
+              <input type="checkbox" />
+            </div>
+          </div>
+      </section>
+
+    <div id="exerciseModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalExerciseName">Exercise Name</h3>
+
+        <div class="form-group">
+          <label for="weight">Weight (lbs/kg):</label>
+          <input type="number" id="weight" placeholder="Enter weight" />
+        </div>
+
+        <div class="form-group">
+          <label for="sets">Sets:</label>
+          <input type="number" id="sets" placeholder="Enter sets" />
+        </div>
+
+        <div class="form-group">
+          <label for="reps">Reps:</label>
+          <input type="number" id="reps" placeholder="Enter reps" />
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes:</label>
+          <input type="text" id="notes" placeholder="Optional notes" />
+        </div>
+
+        <h4>Previous Records:</h4>
+        <div id="exerciseHistory" class="history-list"></div>
+
+        <div class="modal-buttons">
+          <button id="cancelExercise" class="action-button">Cancel</button>
+          <button id="saveExercise" class="toggle-button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="addExerciseModal" class="modal">
+      <div class="modal-content">
+        <h3>Add Custom Exercise</h3>
+
+        <div class="form-group">
+          <label for="customExerciseName">Exercise Name:</label>
+          <input
+            type="text"
+            id="customExerciseName"
+            placeholder="e.g., Heel-Elevated Squat"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="customExerciseSets">Default Sets:</label>
+          <input type="number" id="customExerciseSets" placeholder="3" />
+        </div>
+
+        <div class="form-group">
+          <label for="customExerciseReps">Default Reps:</label>
+          <input type="number" id="customExerciseReps" placeholder="10-12" />
+        </div>
+
+        <div class="modal-buttons">
+          <button id="cancelCustomExercise" class="action-button">
+            Cancel
+          </button>
+          <button id="saveCustomExercise" class="toggle-button">
+            Add Exercise
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/workout-layout.js"></script>
+  </body>
+</html>
+
+
+ 
