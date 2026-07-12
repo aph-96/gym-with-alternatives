@@ -645,3 +645,155 @@ input[type="checkbox"] {
   padding: 14px 24px;
   border-radius: 14px;
 }
+/* ========================================
+   WORKOUT CALENDAR
+======================================== */
+
+.calendar-page {
+  width: min(100% - 2rem, 700px);
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.calendar-description {
+  margin-bottom: 1.25rem;
+  opacity: 0.75;
+}
+
+.workout-calendar {
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--card-background, #b99ffb);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.calendar-nav-button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.5rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekdays {
+  margin-bottom: 0.35rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.65;
+}
+
+.calendar-day {
+  position: relative;
+  min-height: 55px;
+  padding: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  background: transparent;
+  font: inherit;
+  cursor: default;
+}
+
+.calendar-day.has-workout {
+  cursor: pointer;
+}
+
+.calendar-day.has-workout:hover,
+.calendar-day.has-workout:focus-visible {
+  border-color: #a855f7;
+  outline: none;
+}
+
+.calendar-day.is-today {
+  border-color: rgb(168 85 247 / 50%);
+}
+
+.calendar-day-number {
+  display: block;
+  text-align: center;
+}
+
+.calendar-workout-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin: 0.35rem auto 0;
+  border-radius: 50%;
+  background: #a855f7;
+}
+
+.calendar-empty-day {
+  min-height: 55px;
+}
+
+.calendar-modal-content {
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.calendar-modal-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.calendar-workout-group {
+  margin-top: 1.25rem;
+}
+
+.calendar-workout-group h3 {
+  margin-bottom: 0.5rem;
+}
+
+.calendar-exercise-record {
+  margin-bottom: 0.75rem;
+  padding: 0.85rem;
+  border-radius: 0.75rem;
+  background: rgb(168 85 247 / 8%);
+}
+
+.calendar-exercise-record h4 {
+  margin: 0 0 0.4rem;
+}
+
+.calendar-exercise-record p {
+  margin: 0.2rem 0;
+}
+.calendar-day.has-workout:hover {
+  transform: translateY(-2px);
+  transition: 0.15s;
+}

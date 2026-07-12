@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Workout Calendar</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+
+  <body>
+    <a href="select-workout.html">
+      <button type="button">Back</button>
+    </a>
+
+    <main class="calendar-page">
+      <h1>📅 Workout Calendar</h1>
+
+      <p class="calendar-description">
+        A dot means that at least one exercise was logged that day.
+      </p>
+
+      <section class="workout-calendar">
+        <div class="calendar-header">
+          <button
+            id="previousMonth"
+            class="calendar-nav-button"
+            type="button"
+            aria-label="Previous month"
+          >
+            ‹
+          </button>
+
+          <h2 id="calendarMonth"></h2>
+
+          <button
+            id="nextMonth"
+            class="calendar-nav-button"
+            type="button"
+            aria-label="Next month"
+          >
+            ›
+          </button>
+        </div>
+
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+
+        <div id="calendarGrid" class="calendar-grid"></div>
+      </section>
+    </main>
+
+    <div id="workoutDayModal" class="modal">
+      <div class="modal-content calendar-modal-content">
+        <button
+          id="closeWorkoutDay"
+          class="calendar-modal-close"
+          type="button"
+          aria-label="Close workout details"
+        >
+          ×
+        </button>
+
+        <h2 id="workoutDayTitle">Workout</h2>
+
+        <p id="workoutDayCount"></p>
+
+        <div id="workoutDayExercises"></div>
+      </div>
+    </div>
+
+    <script src="js/workout-calendar.js"></script>
+  </body>
+</html>
