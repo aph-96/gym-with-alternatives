@@ -797,3 +797,13 @@ input[type="checkbox"] {
   transform: translateY(-2px);
   transition: 0.15s;
 }
+
+
+/* ===== APP DRAWER / HAMBURGER ===== */
+.hamburger-button{position:fixed;top:12px;left:12px;z-index:1200;width:44px;height:44px;margin:0;padding:0;border-radius:12px;font-size:1.4rem;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.app-drawer{position:fixed;inset:0 auto 0 0;width:min(84vw,320px);z-index:1400;background:#141419;transform:translateX(-105%);transition:transform .22s ease;overflow-y:auto;text-align:left;box-shadow:8px 0 30px rgba(0,0,0,.45)}.app-drawer.is-open{transform:translateX(0)}
+.drawer-overlay{display:none;position:fixed;inset:0;z-index:1300;background:rgba(0,0,0,.62)}.drawer-overlay.is-open{display:block}.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem;color:var(--accent);border-bottom:1px solid #2b2b34}.drawer-close{margin:0;background:transparent;font-size:1.7rem;padding:.2rem .5rem}.drawer-nav{padding:.75rem}.drawer-nav a{display:block;color:var(--text);text-decoration:none;padding:.7rem .75rem;border-radius:10px}.drawer-nav a:hover{background:#22222a}.drawer-label{color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.12em;margin:1rem .75rem .3rem}
+/* ===== ACTIVITY CARDS ===== */
+.activity-card{border:0;width:100%;font:inherit;text-align:center;margin:0;background:var(--card);padding:25px}.activity-card h2{margin-bottom:8px}.activity-card p{color:var(--text);opacity:.8}.activity-log-grid{margin-top:1.25rem}.activity-log-grid h2{grid-column:1/-1;color:var(--accent)}.activity-notes{width:100%;min-height:110px;resize:vertical}
+/* ===== CALENDAR ACTIVITY COLOURS ===== */
+.calendar-dot-row{display:flex;justify-content:center;gap:4px;margin-top:.35rem;min-height:7px}.calendar-dot-row .calendar-workout-dot{margin:0}.dot-workout{background:#a855f7}.dot-climbing{background:#3b82f6}.dot-physio{background:#ec4899}.dot-mobility{background:#86efac}.calendar-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem 1rem;margin:0 0 1rem;font-size:.82rem}.legend-item{display:flex;align-items:center;gap:.35rem}.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block}.legend-workout{background:#a855f7}.legend-climbing{background:#3b82f6}.legend-physio{background:#ec4899}.legend-mobility{background:#86efac}

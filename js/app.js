@@ -92,6 +92,7 @@ function logExerciseForCalendar({
     id: createUniqueRecordId(),
     date: getTodayDateKey(),
     timestamp: new Date().toISOString(),
+    type: "workout",
     workoutName: getWorkoutPageName(),
     exerciseId,
     exerciseName,

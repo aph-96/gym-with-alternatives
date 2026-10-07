@@ -38,6 +38,14 @@
         </a>
       </div>
 
+
+      <div class="card-container activity-log-grid">
+        <h2>Other Activity</h2>
+        <button id="activity-climbing" class="card activity-card" data-log-activity="climbing"><h2>🧗 Rock Climbing</h2><p>Log a climbing session</p></button>
+        <button id="activity-physio" class="card activity-card" data-log-activity="physio"><h2>💗 Physio / Rehab</h2><p>Log rehab or physio work</p></button>
+        <button id="activity-mobility" class="card activity-card" data-log-activity="mobility"><h2>🧘 Mobility / Stretching</h2><p>Log mobility or stretching</p></button>
+      </div>
+
       <!-- Import / Export Buttons -->
       <div class="button-container">
         <button class="import-export" onclick="exportData()">
@@ -57,7 +65,10 @@
         />
       </div>
     </div>
+
+    <div id="activityModal" class="modal"><div class="modal-content"><h3 id="activityModalTitle">Log Activity</h3><div class="form-group"><label for="activityDate">Date:</label><input type="date" id="activityDate" /></div><div class="form-group"><label for="activityNotes">Notes:</label><textarea id="activityNotes" class="activity-notes" placeholder="Optional notes about what you did"></textarea></div><div class="modal-buttons"><button id="cancelActivity" class="action-button">Cancel</button><button id="saveActivity" class="toggle-button">Log Activity</button></div></div></div>
     <script src="js/app.js"></script>
+    <script src="js/activity-log.js"></script>
     <script>
       window.addEventListener("load", () => {
         setTimeout(() => {
@@ -66,5 +77,6 @@
         }, 3200);
       });
     </script>
+    <script src="js/navigation.js"></script>
   </body>
 </html>
