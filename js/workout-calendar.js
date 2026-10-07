@@ -1,13 +1,338 @@
 "use strict";
-const WORKOUT_LOG_STORAGE_KEY="workoutCalendarLog";
-const calendarMonth=document.getElementById("calendarMonth"),calendarGrid=document.getElementById("calendarGrid"),previousMonthButton=document.getElementById("previousMonth"),nextMonthButton=document.getElementById("nextMonth"),workoutDayModal=document.getElementById("workoutDayModal"),closeWorkoutDayButton=document.getElementById("closeWorkoutDay"),workoutDayTitle=document.getElementById("workoutDayTitle"),workoutDayCount=document.getElementById("workoutDayCount"),workoutDayExercises=document.getElementById("workoutDayExercises");
-let displayedDate=new Date();displayedDate.setDate(1);
-function getWorkoutLog(){try{const x=JSON.parse(localStorage.getItem(WORKOUT_LOG_STORAGE_KEY)||"[]");return Array.isArray(x)?x:[]}catch{return[]}}
-function typeOf(e){return e.type||"workout"} function key(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}
-function full(k){const [y,m,d]=k.split("-").map(Number);return new Intl.DateTimeFormat("en-IE",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date(y,m-1,d))}
-function entries(k){return getWorkoutLog().filter(e=>e.date===k)}
-function day(date){const k=key(date),es=entries(k),b=document.createElement("button");b.type="button";b.className="calendar-day";b.dataset.date=k;if(k===key(new Date()))b.classList.add("is-today");const n=document.createElement("span");n.className="calendar-day-number";n.textContent=date.getDate();b.append(n);if(es.length){b.classList.add("has-workout");const row=document.createElement("span");row.className="calendar-dot-row";[...new Set(es.map(typeOf))].forEach(t=>{const dot=document.createElement("span");dot.className=`calendar-workout-dot dot-${t}`;row.append(dot)});b.append(row);b.setAttribute("aria-label",`${full(k)}: activity logged`);b.addEventListener("click",()=>openDay(k))}return b}
-function render(){calendarGrid.innerHTML="";calendarMonth.textContent=new Intl.DateTimeFormat("en-IE",{month:"long",year:"numeric"}).format(displayedDate);const y=displayedDate.getFullYear(),m=displayedDate.getMonth(),last=new Date(y,m+1,0),lead=(new Date(y,m,1).getDay()+6)%7;for(let i=0;i<lead;i++){const x=document.createElement("div");x.className="calendar-empty-day";calendarGrid.append(x)}for(let d=1;d<=last.getDate();d++)calendarGrid.append(day(new Date(y,m,d)))}
-function detail(c,l,v){if(v===undefined||v===null||v==="")return;const p=document.createElement("p"),st=document.createElement("strong");st.textContent=`${l}: `;p.append(st,document.createTextNode(String(v)));c.append(p)}
-function openDay(k){const es=entries(k);workoutDayTitle.textContent=full(k);workoutDayCount.textContent=`${es.length} ${es.length===1?"entry":"entries"} logged`;workoutDayExercises.innerHTML="";const groups={};es.forEach(e=>(groups[e.workoutName||"Workout"]??=[]).push(e));Object.entries(groups).forEach(([name,items])=>{const sec=document.createElement("section");sec.className="calendar-workout-group";const h=document.createElement("h3");h.textContent=name;sec.append(h);items.forEach(e=>{const a=document.createElement("article");a.className=`calendar-exercise-record activity-${typeOf(e)}`;const h4=document.createElement("h4");h4.textContent=e.exerciseName||e.workoutName||"Activity";a.append(h4);detail(a,"Weight/band",e.weight);detail(a,"Sets",e.sets);detail(a,"Reps",e.reps);detail(a,"Notes",e.notes);sec.append(a)});workoutDayExercises.append(sec)});workoutDayModal.style.display="flex"}
-function close(){workoutDayModal.style.display="none"} previousMonthButton.addEventListener("click",()=>{displayedDate.setMonth(displayedDate.getMonth()-1);render()});nextMonthButton.addEventListener("click",()=>{displayedDate.setMonth(displayedDate.getMonth()+1);render()});closeWorkoutDayButton.addEventListener("click",close);workoutDayModal.addEventListener("click",e=>{if(e.target===workoutDayModal)close()});document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});render();
+
+const WORKOUT_LOG_STORAGE_KEY = "workoutCalendarLog";
+
+const calendarMonth = document.getElementById("calendarMonth");
+const calendarGrid = document.getElementById("calendarGrid");
+const previousMonthButton = document.getElementById("previousMonth");
+const nextMonthButton = document.getElementById("nextMonth");
+
+const workoutDayModal = document.getElementById("workoutDayModal");
+const closeWorkoutDayButton = document.getElementById("closeWorkoutDay");
+const workoutDayTitle = document.getElementById("workoutDayTitle");
+const workoutDayCount = document.getElementById("workoutDayCount");
+const workoutDayExercises = document.getElementById("workoutDayExercises");
+
+let displayedDate = new Date();
+displayedDate.setDate(1);
+
+/* ========================================
+   GET SAVED WORKOUT / ACTIVITY DATA
+======================================== */
+
+function getWorkoutLog() {
+  try {
+    const log = JSON.parse(
+      localStorage.getItem(WORKOUT_LOG_STORAGE_KEY) || "[]",
+    );
+
+    return Array.isArray(log) ? log : [];
+  } catch {
+    return [];
+  }
+}
+
+/* ========================================
+   ACTIVITY TYPE
+======================================== */
+
+/*
+  Older workout records don't have a "type".
+  Treat those as normal workouts so old data
+  continues to work.
+*/
+function getActivityType(entry) {
+  return entry.type || "workout";
+}
+
+/* ========================================
+   DATE HELPERS
+======================================== */
+
+function getDateKey(date) {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
+    2,
+    "0",
+  )}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function getFullDate(dateKey) {
+  const [year, month, day] = dateKey.split("-").map(Number);
+
+  const date = new Date(year, month - 1, day);
+
+  return new Intl.DateTimeFormat("en-IE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
+
+function getEntriesForDate(dateKey) {
+  return getWorkoutLog().filter((entry) => entry.date === dateKey);
+}
+
+/* ========================================
+   CREATE CALENDAR DAY
+======================================== */
+
+function createCalendarDay(date) {
+  const dateKey = getDateKey(date);
+  const entries = getEntriesForDate(dateKey);
+
+  const button = document.createElement("button");
+
+  button.type = "button";
+  button.className = "calendar-day";
+  button.dataset.date = dateKey;
+
+  // Highlight today
+  if (dateKey === getDateKey(new Date())) {
+    button.classList.add("is-today");
+  }
+
+  // Day number
+  const dayNumber = document.createElement("span");
+
+  dayNumber.className = "calendar-day-number";
+  dayNumber.textContent = date.getDate();
+
+  button.append(dayNumber);
+
+  /*
+    If something was logged on this date,
+    add the appropriate coloured dots.
+
+    Workout  = purple
+    Climbing = blue
+    Physio   = pink
+    Mobility = light green
+  */
+  if (entries.length > 0) {
+    button.classList.add("has-workout");
+
+    const dotRow = document.createElement("span");
+    dotRow.className = "calendar-dot-row";
+
+    const activityTypes = [
+      ...new Set(entries.map((entry) => getActivityType(entry))),
+    ];
+
+    activityTypes.forEach((activityType) => {
+      const dot = document.createElement("span");
+
+      dot.className = `calendar-workout-dot dot-${activityType}`;
+
+      dotRow.append(dot);
+    });
+
+    button.append(dotRow);
+
+    button.setAttribute(
+      "aria-label",
+      `${getFullDate(dateKey)}: activity logged`,
+    );
+
+    button.addEventListener("click", () => {
+      openWorkoutDay(dateKey);
+    });
+  }
+
+  return button;
+}
+
+/* ========================================
+   RENDER CALENDAR
+======================================== */
+
+function renderCalendar() {
+  calendarGrid.innerHTML = "";
+
+  calendarMonth.textContent = new Intl.DateTimeFormat("en-IE", {
+    month: "long",
+    year: "numeric",
+  }).format(displayedDate);
+
+  const year = displayedDate.getFullYear();
+  const month = displayedDate.getMonth();
+
+  const lastDayOfMonth = new Date(year, month + 1, 0);
+
+  /*
+    JS week:
+    Sunday = 0
+    Monday = 1
+
+    Our calendar starts on Monday,
+    so convert it to Monday-first.
+  */
+  const leadingEmptyDays = (new Date(year, month, 1).getDay() + 6) % 7;
+
+  // Empty spaces before the first day
+  for (let i = 0; i < leadingEmptyDays; i++) {
+    const emptyDay = document.createElement("div");
+
+    emptyDay.className = "calendar-empty-day";
+
+    calendarGrid.append(emptyDay);
+  }
+
+  // Actual days of the month
+  for (let day = 1; day <= lastDayOfMonth.getDate(); day++) {
+    const date = new Date(year, month, day);
+
+    calendarGrid.append(createCalendarDay(date));
+  }
+}
+
+/* ========================================
+   ADD DETAIL TO MODAL
+======================================== */
+
+function addDetail(container, label, value) {
+  if (value === undefined || value === null || value === "") {
+    return;
+  }
+
+  const paragraph = document.createElement("p");
+  const strong = document.createElement("strong");
+
+  strong.textContent = `${label}: `;
+
+  paragraph.append(strong, document.createTextNode(String(value)));
+
+  container.append(paragraph);
+}
+
+/* ========================================
+   OPEN DAY DETAILS
+======================================== */
+
+function openWorkoutDay(dateKey) {
+  const entries = getEntriesForDate(dateKey);
+
+  workoutDayTitle.textContent = getFullDate(dateKey);
+
+  workoutDayCount.textContent = `${entries.length} ${
+    entries.length === 1 ? "entry" : "entries"
+  } logged`;
+
+  workoutDayExercises.innerHTML = "";
+
+  /*
+    Group entries by workout/activity.
+
+    Examples:
+    Push
+    Pull
+    Legs
+    Rock Climbing
+    Physio / Rehab
+    Mobility / Stretching
+  */
+  const groups = {};
+
+  entries.forEach((entry) => {
+    const groupName = entry.workoutName || "Workout";
+
+    if (!groups[groupName]) {
+      groups[groupName] = [];
+    }
+
+    groups[groupName].push(entry);
+  });
+
+  Object.entries(groups).forEach(([groupName, groupEntries]) => {
+    const section = document.createElement("section");
+
+    section.className = "calendar-workout-group";
+
+    const heading = document.createElement("h3");
+
+    heading.textContent = groupName;
+
+    section.append(heading);
+
+    groupEntries.forEach((entry) => {
+      const record = document.createElement("article");
+
+      const activityType = getActivityType(entry);
+
+      record.className = `calendar-exercise-record activity-${activityType}`;
+
+      const exerciseHeading = document.createElement("h4");
+
+      exerciseHeading.textContent =
+        entry.exerciseName || entry.workoutName || "Activity";
+
+      record.append(exerciseHeading);
+
+      // Workout details
+      addDetail(record, "Weight/band", entry.weight);
+
+      addDetail(record, "Sets", entry.sets);
+
+      addDetail(record, "Reps", entry.reps);
+
+      // Works for both workouts and activities
+      addDetail(record, "Notes", entry.notes);
+
+      section.append(record);
+    });
+
+    workoutDayExercises.append(section);
+  });
+
+  workoutDayModal.style.display = "flex";
+}
+
+/* ========================================
+   CLOSE DAY DETAILS
+======================================== */
+
+function closeWorkoutDay() {
+  workoutDayModal.style.display = "none";
+}
+
+/* ========================================
+   PREVIOUS / NEXT MONTH
+======================================== */
+
+previousMonthButton.addEventListener("click", () => {
+  displayedDate.setMonth(displayedDate.getMonth() - 1);
+
+  renderCalendar();
+});
+
+nextMonthButton.addEventListener("click", () => {
+  displayedDate.setMonth(displayedDate.getMonth() + 1);
+
+  renderCalendar();
+});
+
+/* ========================================
+   CLOSE MODAL
+======================================== */
+
+closeWorkoutDayButton.addEventListener("click", closeWorkoutDay);
+
+// Close when clicking outside modal
+workoutDayModal.addEventListener("click", (event) => {
+  if (event.target === workoutDayModal) {
+    closeWorkoutDay();
+  }
+});
+
+// Close with Escape key
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeWorkoutDay();
+  }
+});
+
+/* ========================================
+   START CALENDAR
+======================================== */
+
+renderCalendar();

@@ -1,5 +1,4 @@
 :root {
-
   --bg: #0f0f12;
 
   --card: #1b1b1f;
@@ -11,27 +10,19 @@
   --muted: #a3a3a3;
 
   --radius: 14px;
-
 }
-
-
 
 /* ===== GLOBAL ===== */
 
 * {
-
   box-sizing: border-box;
 
   margin: 0;
 
   padding: 0;
-
 }
 
-
-
 body {
-
   font-family: "Inter", sans-serif;
 
   background-color: var(--bg);
@@ -41,25 +32,17 @@ body {
   padding: 1.5rem;
 
   text-align: center;
-
 }
 
-
-
 h1 {
-
   color: var(--accent);
 
   margin-bottom: 1.5rem;
 
   margin-top: 1.5rem;
-
 }
 
-
-
 .fullscreen-center {
-
   min-height: 100vh;
 
   display: flex;
@@ -67,15 +50,11 @@ h1 {
   flex-direction: column;
 
   justify-content: center;
-
 }
-
-
 
 /* ===== GAMER LOADING SCREEN ===== */
 
 #loading-screen {
-
   position: fixed;
 
   inset: 0;
@@ -95,47 +74,31 @@ h1 {
   overflow: hidden;
 
   animation: fadeOut 0.8s ease 3s forwards;
-
 }
 
-
-
 .loading-logo {
-
   width: 130px;
 
   margin-bottom: 25px;
 
   animation: pulseGlow 1.5s infinite alternate;
-
 }
 
-
-
 @keyframes pulseGlow {
-
   from {
-
     filter: drop-shadow(0 0 10px #a855f7);
 
     transform: scale(1);
-
   }
 
   to {
-
     filter: drop-shadow(0 0 30px #a855f7);
 
     transform: scale(1.08);
-
   }
-
 }
 
-
-
 .glitch {
-
   position: relative;
 
   color: #a855f7;
@@ -147,15 +110,10 @@ h1 {
   text-transform: uppercase;
 
   margin-bottom: 30px;
-
 }
 
-
-
 .glitch::before,
-
 .glitch::after {
-
   content: attr(data-text);
 
   position: absolute;
@@ -165,93 +123,61 @@ h1 {
   width: 100%;
 
   overflow: hidden;
-
 }
 
-
-
 .glitch::before {
-
   color: #ff00ff;
 
   animation: glitchTop 1s infinite linear alternate-reverse;
-
 }
 
-
-
 .glitch::after {
-
   color: #00ffff;
 
   animation: glitchBottom 1s infinite linear alternate-reverse;
-
 }
 
-
-
 @keyframes glitchTop {
-
   0% {
-
     clip-path: inset(0 0 80% 0);
 
     transform: translate(-2px, -2px);
-
   }
 
   50% {
-
     clip-path: inset(0 0 60% 0);
 
     transform: translate(2px, 2px);
-
   }
 
   100% {
-
     clip-path: inset(0 0 80% 0);
 
     transform: translate(-2px, 0);
-
   }
-
 }
 
-
-
 @keyframes glitchBottom {
-
   0% {
-
     clip-path: inset(60% 0 0 0);
 
     transform: translate(2px, 2px);
-
   }
 
   50% {
-
     clip-path: inset(40% 0 0 0);
 
     transform: translate(-2px, -2px);
-
   }
 
   100% {
-
     clip-path: inset(60% 0 0 0);
 
     transform: translate(2px, 0);
-
   }
-
 }
 
-
-
 .loading-bar {
-
   width: 200px;
 
   height: 6px;
@@ -263,13 +189,9 @@ h1 {
   overflow: hidden;
 
   box-shadow: 0 0 10px #a855f7;
-
 }
 
-
-
 .loading-progress {
-
   height: 100%;
 
   width: 0%;
@@ -277,41 +199,25 @@ h1 {
   background: linear-gradient(90deg, #a855f7, #ff00ff);
 
   animation: loadBar 3s ease forwards;
-
 }
-
-
 
 @keyframes loadBar {
-
   to {
-
     width: 100%;
-
   }
-
 }
 
-
-
 @keyframes fadeOut {
-
   to {
-
     opacity: 0;
 
     visibility: hidden;
-
   }
-
 }
-
-
 
 /* ===== CARD LAYOUT ===== */
 
 .card-container {
-
   display: grid;
 
   grid-template-columns: 1fr;
@@ -323,13 +229,9 @@ h1 {
   margin: 20px auto;
 
   padding: 0 10px;
-
 }
 
-
-
 .card {
-
   background-color: var(--card);
 
   border-radius: var(--radius);
@@ -341,63 +243,41 @@ h1 {
   color: var(--text);
 
   transition:
-
     transform 0.2s ease,
-
     box-shadow 0.2s ease;
 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-
 }
 
-
-
 .card h2 {
-
   margin-bottom: 8px;
 
   font-size: 1.3rem;
-
 }
 
-
-
 .card p {
-
   opacity: 0.8;
 
   font-size: 1rem;
-
 }
 
-
-
 .card:hover {
-
   transform: translateY(-4px);
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-
 }
-
-
 
 /* ===== WORKOUT PAGE ===== */
 
 .workout-section {
-
   max-width: 700px;
 
   margin: 0 auto;
 
   text-align: left;
-
 }
 
-
-
 .muscle-card {
-
   background-color: var(--card);
 
   border-radius: var(--radius);
@@ -407,37 +287,25 @@ h1 {
   margin: 1rem 0;
 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-
 }
 
-
-
 .muscle-card-header h2 {
-
   margin-bottom: 0.15rem;
 
   font-size: 1.2rem;
 
   color: var(--accent);
-
 }
 
-
-
 .muscle-card-header p {
-
   margin-bottom: 0.5rem;
 
   font-size: 0.9rem;
 
   color: var(--muted);
-
 }
 
-
-
 .subsection {
-
   border-radius: 12px;
 
   background: #16161b;
@@ -447,35 +315,23 @@ h1 {
   padding: 0.75rem 0.8rem 0.85rem;
 
   margin-top: 0.6rem;
-
 }
 
-
-
 .subsection-header h3 {
-
   margin: 0 0 0.1rem;
 
   font-size: 0.95rem;
-
 }
 
-
-
 .subsection-header p {
-
   margin: 0 0 0.5rem;
 
   font-size: 0.85rem;
 
   color: var(--muted);
-
 }
 
-
-
 .today-exercise-label {
-
   margin: 0 0 0.35rem;
 
   font-size: 0.8rem;
@@ -485,35 +341,22 @@ h1 {
   letter-spacing: 0.08em;
 
   color: #9ca3af;
-
 }
-
-
 
 .today-exercise {
-
   margin-bottom: 0.35rem;
-
 }
 
-
-
 .exercise.is-main {
-
   border: 1px solid var(--accent);
 
   box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);
-
 }
-
-
 
 /* ===== WARMUP / COOLDOWN ===== */
 
 .warmup,
-
 .cooldown {
-
   margin: 0.75rem 0;
 
   font-size: 0.9rem;
@@ -521,45 +364,26 @@ h1 {
   color: var(--muted);
 
   text-align: center;
-
 }
-
-
 
 .warmup {
-
   padding-bottom: 10px;
-
 }
-
-
 
 .cooldown {
-
   padding-top: 10px;
-
 }
-
-
 
 .warmup strong,
-
 .cooldown strong {
-
   color: var(--accent);
-
 }
-
-
 
 /* ===== BUTTONS ===== */
 
 .button-container,
-
 .selection-container,
-
 #workoutOptions {
-
   display: flex;
 
   flex-direction: column;
@@ -569,13 +393,9 @@ h1 {
   max-width: 300px;
 
   margin: 20px auto;
-
 }
 
-
-
 button {
-
   background-color: var(--accent);
 
   border: none;
@@ -591,35 +411,21 @@ button {
   cursor: pointer;
 
   transition:
-
     background-color 0.3s,
-
     transform 0.1s;
-
 }
 
-
-
 button:hover {
-
   background-color: #9333ea;
 
   transform: translateY(-2px);
-
 }
-
-
 
 button:active {
-
   transform: translateY(0);
-
 }
 
-
-
 button.import-export {
-
   background-color: var(--accent);
 
   border: none;
@@ -635,35 +441,23 @@ button.import-export {
   cursor: pointer;
 
   transition: background-color 0.3s;
-
 }
-
-
 
 button.import-export:hover {
-
   background-color: #9333ea;
-
 }
-
-
 
 /* ===== EXERCISE ROWS ===== */
 
 #exerciseContainer {
-
   max-width: 600px;
 
   margin: 0 auto;
 
   text-align: left;
-
 }
 
-
-
 .exercise {
-
   display: grid;
 
   grid-template-columns: 1fr auto;
@@ -679,13 +473,9 @@ button.import-export:hover {
   margin-bottom: 0.8rem;
 
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-
 }
 
-
-
 .exercise a {
-
   grid-column: 1;
 
   grid-row: 1;
@@ -693,21 +483,13 @@ button.import-export:hover {
   color: var(--text);
 
   text-decoration: none;
-
 }
-
-
 
 .exercise a:hover {
-
   color: var(--accent);
-
 }
 
-
-
 .exercise-stats {
-
   grid-column: 1 / 3;
 
   grid-row: 2;
@@ -715,13 +497,9 @@ button.import-export:hover {
   color: var(--muted);
 
   font-size: 0.85rem;
-
 }
 
-
-
 .exercise input[type="checkbox"] {
-
   grid-column: 2;
 
   grid-row: 1;
@@ -729,27 +507,19 @@ button.import-export:hover {
   justify-self: end;
 
   align-self: center;
-
 }
 
-
-
 input[type="checkbox"] {
-
   accent-color: var(--accent);
 
   width: 18px;
 
   height: 18px;
-
 }
-
-
 
 /* Main exercise layout */
 
 .today-exercise .exercise {
-
   grid-template-columns: 1fr auto;
 
   grid-template-rows: auto auto;
@@ -757,51 +527,35 @@ input[type="checkbox"] {
   align-items: center;
 
   padding-top: 1rem;
-
 }
 
-
-
 .today-exercise .exercise .exercise-stats {
-
   grid-column: 1 / 3;
 
   grid-row: 2;
 
   margin-top: 0.15rem;
-
 }
-
-
 
 /* ===== ALTERNATIVES ===== */
 
 .alt-toggle {
-
   display: block;
 
   margin: 0.5rem auto 0.85rem;
 
   text-align: center;
-
 }
 
-
-
 .alt-list {
-
   margin-top: 0.85rem;
 
   border-top: 1px solid #262630;
 
   padding-top: 0.85rem;
-
 }
 
-
-
 .alt-list h4 {
-
   margin: 0 0 0.45rem;
 
   font-size: 0.8rem;
@@ -811,21 +565,13 @@ input[type="checkbox"] {
   letter-spacing: 0.08em;
 
   color: #9ca3af;
-
 }
-
-
 
 .alt-list.is-collapsed {
-
   display: none;
-
 }
 
-
-
 .alt-list .exercise {
-
   display: flex;
 
   flex-direction: column;
@@ -833,37 +579,21 @@ input[type="checkbox"] {
   align-items: center;
 
   text-align: center;
-
 }
-
-
 
 .alt-list .exercise a {
-
   margin-bottom: 0.25rem;
-
 }
-
-
 
 .alt-list .exercise-stats {
-
   margin-bottom: 0.45rem;
-
 }
-
-
 
 .alt-list .exercise input[type="checkbox"] {
-
   display: none;
-
 }
 
-
-
 .alt-list .exercise-actions {
-
   display: flex;
 
   justify-content: center;
@@ -873,15 +603,10 @@ input[type="checkbox"] {
   gap: 1.25rem;
 
   width: 100%;
-
 }
 
-
-
 .alt-list .swap-btn,
-
 .alt-list .add-btn {
-
   background: transparent;
 
   color: var(--accent);
@@ -901,27 +626,20 @@ input[type="checkbox"] {
   text-underline-offset: 3px;
 
   white-space: nowrap;
-
 }
 
-
-
 .alt-list .swap-btn:hover,
-
 .alt-list .add-btn:hover {
-
   background: transparent;
 
   color: #c084fc;
 
   transform: none;
-
 }
 
 /* Force alternative action buttons onto one line */
 
 .alt-list .exercise-actions {
-
   display: flex;
 
   flex-direction: row;
@@ -931,15 +649,11 @@ input[type="checkbox"] {
   align-items: center;
 
   gap: 1rem;
-
 }
-
-
 
 /* Override global button styling */
 
 .alt-list .exercise-actions button {
-
   width: auto;
 
   display: inline-flex;
@@ -947,13 +661,11 @@ input[type="checkbox"] {
   padding: 0;
 
   min-width: unset;
-
 }
 
 /* Remove from today */
 
 .remove-today-btn {
-
   grid-column: 1 / 3;
 
   grid-row: 3;
@@ -965,23 +677,15 @@ input[type="checkbox"] {
   padding: 0.35rem 0.65rem;
 
   font-size: 0.75rem;
-
 }
-
-
 
 .remove-today-btn:hover {
-
   background-color: #991b1b;
-
 }
-
-
 
 /* ===== MODALS ===== */
 
 .modal {
-
   display: none;
 
   position: fixed;
@@ -1001,13 +705,9 @@ input[type="checkbox"] {
   justify-content: center;
 
   align-items: center;
-
 }
 
-
-
 .modal-content {
-
   background-color: var(--card);
 
   border-radius: var(--radius);
@@ -1021,43 +721,27 @@ input[type="checkbox"] {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 
   text-align: left;
-
 }
 
-
-
 .modal h3 {
-
   color: var(--accent);
 
   margin-top: 0;
-
 }
-
-
 
 .form-group {
-
   margin-bottom: 15px;
-
 }
 
-
-
 .form-group label {
-
   display: block;
 
   margin-bottom: 5px;
 
   color: var(--text);
-
 }
 
-
-
 .form-group input {
-
   width: 100%;
 
   padding: 8px;
@@ -1069,39 +753,27 @@ input[type="checkbox"] {
   border: 1px solid #3d3d45;
 
   color: var(--text);
-
 }
 
-
-
 .modal-buttons {
-
   display: flex;
 
   justify-content: space-between;
 
   margin-top: 20px;
-
 }
-
-
 
 /* ===== PREVIOUS RECORDS INSIDE MODAL ===== */
 
 .history-list {
-
   margin-top: 15px;
 
   max-height: 150px;
 
   overflow-y: auto;
-
 }
 
-
-
 .history-item {
-
   padding: 8px;
 
   border-radius: var(--radius);
@@ -1111,139 +783,79 @@ input[type="checkbox"] {
   margin-bottom: 8px;
 
   font-size: 0.9rem;
-
 }
 
-
-
 .history-item .date {
-
   color: var(--accent);
 
   font-size: 0.8rem;
-
 }
-
-
 
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 640px) {
-
   body {
-
     padding: 1rem;
-
   }
-
-
 
   h1 {
-
     font-size: 25px;
-
   }
-
-
 
   .workout-section {
-
     padding: 0 0.25rem;
-
   }
-
-
 
   .muscle-card {
-
     padding: 0.9rem;
-
   }
 
-
-
   .exercise {
-
     padding: 0.7rem 0.65rem;
 
     column-gap: 0.45rem;
-
   }
-
-
 
   .alt-toggle {
-
     font-size: 0.85rem;
-
   }
-
-
 
   .alt-list .swap-btn {
-
     margin-right: 5.5rem;
-
   }
-
-
 
   .alt-list .add-btn {
-
     margin-left: 5.5rem;
-
   }
-
-
 
   .modal-buttons {
-
     gap: 0.75rem;
-
   }
 
-
-
   .modal-buttons button {
-
     flex: 1;
 
     padding: 0.75rem 1rem;
-
   }
-
 }
 
-
-
 @media (min-width: 600px) {
-
   body {
-
     max-width: 600px;
 
     margin: 0 auto;
-
   }
-
 }
 
-
-
 @media (min-width: 768px) {
-
   .card-container {
-
     grid-template-columns: repeat(2, 1fr);
-
   }
-
 }
 
 /* FINAL override: keep alternative buttons side by side */
 
 .alt-list .exercise-actions {
-
   display: flex !important;
 
   flex-direction: row !important;
@@ -1255,15 +867,10 @@ input[type="checkbox"] {
   gap: 1rem !important;
 
   width: 100% !important;
-
 }
 
-
-
 .alt-list .exercise-actions .swap-btn,
-
 .alt-list .exercise-actions .add-btn {
-
   display: inline-block !important;
 
   width: auto !important;
@@ -1275,11 +882,9 @@ input[type="checkbox"] {
   margin: 0 !important;
 
   padding: 0.25rem 0 !important;
-
 }
 
 .add-exercise-button {
-
   display: block;
 
   width: fit-content;
@@ -1289,7 +894,6 @@ input[type="checkbox"] {
   padding: 14px 24px;
 
   border-radius: 14px;
-
 }
 
 /* ========================================
@@ -1298,32 +902,21 @@ input[type="checkbox"] {
 
 \======================================== */
 
-
-
 .calendar-page {
-
   width: min(100% - 2rem, 700px);
 
   margin: 0 auto;
 
   padding-bottom: 3rem;
-
 }
 
-
-
 .calendar-description {
-
   margin-bottom: 1.25rem;
 
   opacity: 0.75;
-
 }
 
-
-
 .workout-calendar {
-
   padding: 1rem;
 
   border-radius: 1rem;
@@ -1331,13 +924,9 @@ input[type="checkbox"] {
   background: var(--card-background, #b99ffb);
 
   box-shadow: 0 4px 18px rgb(0 0 0 / 10%);
-
 }
 
-
-
 .calendar-header {
-
   display: grid;
 
   grid-template-columns: 44px 1fr 44px;
@@ -1347,28 +936,18 @@ input[type="checkbox"] {
   gap: 0.5rem;
 
   margin-bottom: 1rem;
-
 }
 
-
-
 .calendar-header h2 {
-
   margin: 0;
 
   text-align: center;
-
 }
 
-
-
 .calendar-nav-button {
-
   width: 44px;
 
   height: 44px;
-
-
 
   display: flex;
 
@@ -1376,42 +955,27 @@ input[type="checkbox"] {
 
   justify-content: center;
 
-
-
   padding: 0;
 
   border: none;
 
   border-radius: 50%;
 
-
-
   font-size: 1.5rem;
 
   line-height: 1;
 
-
-
   cursor: pointer;
-
 }
 
-
-
 .calendar-weekdays,
-
 .calendar-grid {
-
   display: grid;
 
   grid-template-columns: repeat(7, minmax(0, 1fr));
-
 }
 
-
-
 .calendar-weekdays {
-
   margin-bottom: 0.35rem;
 
   text-align: center;
@@ -1421,13 +985,9 @@ input[type="checkbox"] {
   font-weight: 700;
 
   opacity: 0.65;
-
 }
 
-
-
 .calendar-day {
-
   position: relative;
 
   min-height: 55px;
@@ -1443,51 +1003,30 @@ input[type="checkbox"] {
   font: inherit;
 
   cursor: default;
-
 }
-
-
 
 .calendar-day.has-workout {
-
   cursor: pointer;
-
 }
 
-
-
 .calendar-day.has-workout:hover,
-
 .calendar-day.has-workout:focus-visible {
-
   border-color: #a855f7;
 
   outline: none;
-
 }
-
-
 
 .calendar-day.is-today {
-
   border-color: rgb(168 85 247 / 50%);
-
 }
 
-
-
 .calendar-day-number {
-
   display: block;
 
   text-align: center;
-
 }
 
-
-
 .calendar-workout-dot {
-
   display: block;
 
   width: 7px;
@@ -1499,33 +1038,21 @@ input[type="checkbox"] {
   border-radius: 50%;
 
   background: #a855f7;
-
 }
-
-
 
 .calendar-empty-day {
-
   min-height: 55px;
-
 }
 
-
-
 .calendar-modal-content {
-
   position: relative;
 
   max-height: 80vh;
 
   overflow-y: auto;
-
 }
 
-
-
 .calendar-modal-close {
-
   position: absolute;
 
   top: 0.65rem;
@@ -1539,29 +1066,17 @@ input[type="checkbox"] {
   font-size: 1.8rem;
 
   cursor: pointer;
-
 }
-
-
 
 .calendar-workout-group {
-
   margin-top: 1.25rem;
-
 }
-
-
 
 .calendar-workout-group h3 {
-
   margin-bottom: 0.5rem;
-
 }
 
-
-
 .calendar-exercise-record {
-
   margin-bottom: 0.75rem;
 
   padding: 0.85rem;
@@ -1569,31 +1084,20 @@ input[type="checkbox"] {
   border-radius: 0.75rem;
 
   background: rgb(168 85 247 / 8%);
-
 }
-
-
 
 .calendar-exercise-record h4 {
-
   margin: 0 0 0.4rem;
-
 }
 
-
-
 .calendar-exercise-record p {
-
   margin: 0.2rem 0;
-
 }
 
 .calendar-day.has-workout:hover {
-
   transform: translateY(-2px);
 
   transition: 0.15s;
-
 }
 
 /* ===== APP DRAWER / HAMBURGER ===== */
@@ -1780,4 +1284,54 @@ input[type="checkbox"] {
 
 .legend-mobility {
   background: #86efac;
+}
+/* ===== QUICK ACTIVITY LOG ===== */
+
+.quick-log {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid #2b2b34;
+}
+
+.quick-log h2 {
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.quick-log-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.quick-log-button {
+  background: #1b1b1f;
+  border: 1px solid #2b2b34;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.quick-log-button:hover {
+  background: #24242b;
+  transform: translateY(-2px);
+}
+
+/* Keep the activity colours subtle */
+.quick-log-button.climbing {
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.quick-log-button.physio {
+  border-color: rgba(236, 72, 153, 0.5);
+}
+
+.quick-log-button.mobility {
+  border-color: rgba(134, 239, 172, 0.5);
 }
