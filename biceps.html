@@ -1,1 +1,161 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Biceps – Gym Tracker</title><link rel="stylesheet" href="css/styles.css"/><link rel="manifest" href="manifest.json"/><meta name="theme-color" content="#a855f7"/></head><body data-workout-name="Biceps"><a href="index.html"><button>Back</button></a><h1>💪 Biceps</h1><div class="workout-section"><section class="muscle-card"><div class="muscle-card-header"><h2>Biceps</h2><p>Choose a main movement or swap in an alternative for today's session.</p></div><div class="subsection"><div class="subsection-header"><h3>Short Head – Inner Biceps</h3><p>Preacher-style curls emphasise the short head.</p></div><p class="today-exercise-label">Today</p><div class="today-exercise"><div class="exercise is-main" data-exercise-id="preacher-curl"><a href="#">Preacher Curl – 3×10–12</a><span class="exercise-stats"></span><input type="checkbox" /></div></div><button class="alt-toggle" type="button">Show alternatives</button><div class="alt-list is-collapsed"><h4>Alternatives</h4><div class="exercise" data-exercise-id="cable-ezbar-curl"><a href="#">Cable EZ-Bar Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div><div class="exercise" data-exercise-id="machine-preacher-curl"><a href="#">Machine Preacher Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div></div></div><div class="subsection"><div class="subsection-header"><h3>Long Head – Outer Peak</h3><p>Lengthened-position curls emphasise the long head.</p></div><p class="today-exercise-label">Today</p><div class="today-exercise"><div class="exercise is-main" data-exercise-id="incline-dumbbell-curl"><a href="#">Seated Incline DB Curl – 3×10–12</a><span class="exercise-stats"></span><input type="checkbox" /></div></div><button class="alt-toggle" type="button">Show alternatives</button><div class="alt-list is-collapsed"><h4>Alternatives</h4><div class="exercise" data-exercise-id="waiter-curl"><a href="#">Waiter Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div><div class="exercise" data-exercise-id="alternating-dumbbell-curl"><a href="#">Alternating DB Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div></div></div><div class="subsection"><div class="subsection-header"><h3>Brachialis & Brachioradialis</h3><p>Neutral and reverse grips build arm thickness.</p></div><p class="today-exercise-label">Today</p><div class="today-exercise"><div class="exercise is-main" data-exercise-id="hammer-curl"><a href="#">Hammer Curl – 3×10–12</a><span class="exercise-stats"></span><input type="checkbox" /></div></div><button class="alt-toggle" type="button">Show alternatives</button><div class="alt-list is-collapsed"><h4>Alternatives</h4><div class="exercise" data-exercise-id="cross-body-hammer-curl"><a href="#">Cross-Body Hammer Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div><div class="exercise" data-exercise-id="reverse-grip-cable-curl"><a href="#">Reverse-Grip Cable Curl – 3×10–12</a><span class="exercise-stats"></span><div class="exercise-actions"><button class="swap-btn" type="button">Make Main</button><button class="add-btn" type="button">Add to Today</button></div><input type="checkbox" /></div></div></div></section></div><div id="exerciseModal" class="modal"><div class="modal-content"><h3 id="modalExerciseName">Exercise Name</h3><div class="form-group"><label for="weight">Weight (lbs/kg):</label><input type="number" id="weight" /></div><div class="form-group"><label for="sets">Sets:</label><input type="number" id="sets" /></div><div class="form-group"><label for="reps">Reps:</label><input type="number" id="reps" /></div><div class="form-group"><label for="notes">Notes:</label><input type="text" id="notes" placeholder="Optional notes" /></div><h4>Previous Records:</h4><div id="exerciseHistory" class="history-list"></div><div class="modal-buttons"><button id="cancelExercise" class="action-button">Cancel</button><button id="saveExercise" class="toggle-button">Save</button></div></div></div><script src="js/app.js"></script><script src="js/navigation.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biceps – Gym Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#a855f7" />
+  </head>
+  <body data-workout-name="Biceps">
+    <a href="index.html"><button>Back</button></a>
+    <h1>💪 Biceps</h1>
+    <div class="workout-section">
+      <section class="muscle-card">
+        <div class="muscle-card-header">
+          <h2>Biceps</h2>
+          <p>
+            Choose a main movement or swap in an alternative for today's
+            session.
+          </p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-header">
+            <h3>Short Head – Inner Biceps</h3>
+            <p>Preacher-style curls emphasise the short head.</p>
+          </div>
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="preacher-curl">
+              <a href="#">Preacher Curl – 3×10–12</a
+              ><span class="exercise-stats"></span><input type="checkbox" />
+            </div>
+          </div>
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+            <div class="exercise" data-exercise-id="cable-ezbar-curl">
+              <a href="#">Cable EZ-Bar Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+            <div class="exercise" data-exercise-id="machine-preacher-curl">
+              <a href="#">Machine Preacher Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+        <div class="subsection">
+          <div class="subsection-header">
+            <h3>Long Head – Outer Peak</h3>
+            <p>Lengthened-position curls emphasise the long head.</p>
+          </div>
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div
+              class="exercise is-main"
+              data-exercise-id="incline-dumbbell-curl"
+            >
+              <a href="#">Seated Incline DB Curl – 3×10–12</a
+              ><span class="exercise-stats"></span><input type="checkbox" />
+            </div>
+          </div>
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+            <div class="exercise" data-exercise-id="waiter-curl">
+              <a href="#">Waiter Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+            <div class="exercise" data-exercise-id="alternating-dumbbell-curl">
+              <a href="#">Alternating DB Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+        <div class="subsection">
+          <div class="subsection-header">
+            <h3>Brachialis & Brachioradialis</h3>
+            <p>Neutral and reverse grips build arm thickness.</p>
+          </div>
+          <p class="today-exercise-label">Today</p>
+          <div class="today-exercise">
+            <div class="exercise is-main" data-exercise-id="hammer-curl">
+              <a href="#">Hammer Curl – 3×10–12</a
+              ><span class="exercise-stats"></span><input type="checkbox" />
+            </div>
+          </div>
+          <button class="alt-toggle" type="button">Show alternatives</button>
+          <div class="alt-list is-collapsed">
+            <h4>Alternatives</h4>
+            <div class="exercise" data-exercise-id="cross-body-hammer-curl">
+              <a href="#">Cross-Body Hammer Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+            <div class="exercise" data-exercise-id="reverse-grip-cable-curl">
+              <a href="#">Reverse-Grip Cable Curl – 3×10–12</a
+              ><span class="exercise-stats"></span>
+              <div class="exercise-actions">
+                <button class="swap-btn" type="button">Make Main</button
+                ><button class="add-btn" type="button">Add to Today</button>
+              </div>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="exerciseModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalExerciseName">Exercise Name</h3>
+        <div class="form-group">
+          <label for="weight">Weight (lbs/kg):</label
+          ><input type="number" id="weight" />
+        </div>
+        <div class="form-group">
+          <label for="sets">Sets:</label><input type="number" id="sets" />
+        </div>
+        <div class="form-group">
+          <label for="reps">Reps:</label><input type="number" id="reps" />
+        </div>
+        <div class="form-group">
+          <label for="notes">Notes:</label
+          ><input type="text" id="notes" placeholder="Optional notes" />
+        </div>
+        <h4>Previous Records:</h4>
+        <div id="exerciseHistory" class="history-list"></div>
+        <div class="modal-buttons">
+          <button id="cancelExercise" class="action-button">Cancel</button
+          ><button id="saveExercise" class="toggle-button">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/navigation.js"></script>
+  </body>
+</html>
