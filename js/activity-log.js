@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   document.querySelectorAll("[data-activity]").forEach((b) =>
     b.addEventListener("click", () => {
-      type = b.dataset.logActivity;
+      type = b.dataset.activity;
       title.textContent = `Log ${names[type]}`;
       date.value = activityDateKey();
       notes.value = "";
